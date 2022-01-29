@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 100;
+    font-display: optional;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff) format('woff')
+}
+
+html, body
+{
+    margin: 0;
+    height: 100%;
+}
+
+body
+{
+    font-family: "Netflix Sans", serif;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+nav
+{
+    background-color: #564d4d;
+    overflow: hidden;
+    height: 75px;
+}
+
+ul
+{
+    display: flex;
+    flex-direction: row;
+}
+
+li
+{
+    list-style-type: none;
+    line-height: 2;
+}
+
+a
+{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#title
+{
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.text-menu
+{
+    margin-left: 75px;
+}
+
+#best-movie-div
+{
+    background-color: #831010;
+    width: 50%;
+    height: 60%;
+    margin: auto;
+}
+
+.title-best-movie{
+    margin-left: 15px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#info-best-movie {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+#button-best-movie
+{
+    width: 250px;
+    height: 50px;
+    background: none;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 25px;
+    margin-top: 20px;
+}
