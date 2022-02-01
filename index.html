@@ -17,11 +17,20 @@
     </header>
     <div id="best-movie-div">
         <h1 class="title-best-movie">Meilleur film du moment</h1>
-        <h1 class="title-best-movie">Avatar</h1>
+        <h1 class="title-best-movie" id="title-movie">Avatar</h1>
         <div id="info-best-movie">
-            <img id="img-best-movie" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg">
+            <img id="img-best-movie" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="image best movie">
             <button id="button-best-movie">Play</button>
         </div>
     </div>
+    <div class="categorie">
+        <h2 class="title-categorie">Horreur</h2>
+        <section  id="categorie_1">
+            <a class="switch" id="switch_left">&#8678;</a>
+            <div class="box-img-categorie"></div>
+            <a class="switch" id="switch_right" onclick="clickRight()">&#x21e8;</a>
+        </section>
+    </div>
+    <script src="js/caroussel.js"></script>
 </body>
 </html>
