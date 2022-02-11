@@ -1,149 +1,91 @@
-/*noinspection CssUnknownTarget*/
-@import url('https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff2');
+@import url('https://fonts.cdnfonts.com/css/gagalin');
 
 html, body {
-    width: 100%;
-    height: auto;
     margin: 0;
     padding: 0;
+    font-family: "Bebas Neue", sans-serif;
+    background-color: gray;
+    color: #FFD700;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Netflix Sans", serif;
-    background-color: #051622;
-    color: #FFF;
-}
-
-nav {
-    overflow: hidden;
-    border-bottom: 1px solid #DEB992;
-    width: 90%;
-    height: auto;
-    margin: auto;
-}
-
-ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 }
 
-li {
+header {
+    width: 80%;
+    border-bottom: 1px solid #FFF;
+}
+
+header > nav > ul {
+    display: flex;
+    align-items: center;
+}
+
+header > nav > ul > li{
     list-style-type: none;
-    line-height: 2;
+    margin-left: 50px;
 }
 
-a {
-    font-size: 22px;
+header > nav > ul > li > a {
     text-decoration: none;
-    color: #1BA098;
-}
-
-#title {
-    margin-left: 15px;
-}
-
-.text-menu {
-    margin-left: 75px;
+    color: #FFF;
+    font-size: 1.5rem;
 }
 
 #best-movie-div {
-    background-color: rgba(0, 0, 0, 0.3);
-    background-size: cover;
     width: 50%;
-    height: 60%;
-    margin: 30px auto auto;
-}
-
-.title-best-movie {
-    margin-left: 15px;
-    text-align: center;
-    padding-top: 30px;
-    font-size: 35px;
-    color: #BC986A;
-}
-
-#title-movie {
-    color: #FF6A3D;
-}
-
-#info-best-movie {
+    padding-bottom: 3rem;
+    margin-top: 2rem;
     display: flex;
-    align-items: center;
     flex-direction: column;
-}
-
-section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px;
-}
-
-#button-best-movie {
-    width: 250px;
-    height: 50px;
-    border: 1px solid #FFFFFF;
-    cursor: pointer;
-    color: #FFF;
-    font-size: 25px;
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: #FF6A3D;
-}
-
-.categorie {
-    margin-top: 75px;
+    background-color: rgba(255, 255, 255, 0.1);
     text-align: center;
 }
 
-.title-categorie {
-    font-size: 3em;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-}
-
-section {
-    width: 100%;
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    margin: 20px 0;
+#best-movie-div > img {
+    width: 15rem;
+    height: auto;
+    margin: auto;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.5);
 }
 
-.best-movie-img {
-    position: relative;
-    margin-left: 25px;
-    margin-right: 30px;
-    right: 0;
-    width: 100%;
+.categories {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5rem;
+}
+
+section {
+    display: flex;
+    overflow: hidden;
+    margin: auto;
+    width: 50rem;
+}
+
+section > img {
+    clear: both;
+    margin-left: 20px;
+    width: auto;
     height: auto;
 }
 
 .switch {
-    position: absolute;
     margin: auto;
-    top: 125px;
     background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-    color: #fff;
-    text-decoration: none;
+    color: #FFF;
     font-size: 4em;
-    width: 80px;
-    text-align: center;
-    z-index: 1;
     cursor: pointer;
 }
 
-.switch:nth-of-type(1) {
-    left: 0;
+.title-categorie {
+    font-size: 3rem;
 }
 
-.switch:nth-of-type(2) {
-    right: 0;
-  }
+.switch:last-child {
+    margin-left: 20px;
+}

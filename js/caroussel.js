@@ -1,49 +1,43 @@
-let scroll_amount = 0;
+import {addMovieToDivImg} from "./api.js"
+import {getMoviesByGenre} from "./api.js"
 
-async function getMovieByID(id) {
-    return (await fetch("http://127.0.0.1:8000/api/v1/titles/"+id)).json()
-}
+function caroussel(categorie, buttonleft, buttonright) {
+    let carousel = document.getElementById(categorie)
+    let prev = document.getElementById(buttonleft)
+    let next = document.getElementById(buttonright)
 
-async function getMoviesByGenre(genre, page) {
-    return (await fetch("http://127.0.0.1:8000/api/v1/titles/?genre="+genre+"&page="+page)).json()
-}
-
-function addMovieToDivImg(data) {
-    for (let i = 0; i < data.length; i++) {
-        let img = document.createElement("img")
-        img.src = data[i].image_url
-        img.classList.add("best-movie-img")
-        img.setAttribute("id", "slideAnim")
-        document.getElementById("categorie-1").appendChild(img)
+    next.onclick = function () {
+        let w = carousel.offsetWidth
+        carousel.scrollLeft += 810
     }
-}
 
-document.getElementById("switch-right").onclick = function () {
-    document.getElementById("categorie-1").scrollTo({
-        top: 0,
-        left: Math.max(scroll_amount += 600, document.getElementById("categorie-1").getBoundingClientRect().width),
-        behavior: "smooth",
-    })
-}
-
-document.getElementById("switch-left").onclick = function () {
-    document.getElementById("categorie-1").scrollTo({
-        top: 0,
-        left: Math.max(scroll_amount -= 600, 0),
-        behavior: "smooth",
-    })
+    prev.onclick = function () {
+        let w = carousel.offsetWidth
+        carousel.scrollLeft -= 810
+    }
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        let data = []
-        let i = 2
-        for (let i = 2; i < 8; i++) {
-            movies = await getMoviesByGenre("Horror", i)
-            movies.results.forEach(movies => data.push(movies))
+        let data_horror = []
+        let data_fantasy = []
+        let data_action = []
+        for (let i = 1; i < 10; i++) {
+            let movies_horror = await getMoviesByGenre("Horror", i)
+            movies_horror.results.forEach(movies => {if (data_horror.length < 7) data_horror.push(movies)})
+            let movies_fantasy = await getMoviesByGenre("Fantasy", i)
+            movies_fantasy.results.forEach(movies => {if (data_fantasy.length < 7) data_fantasy.push(movies)})
+            let movies_action = await getMoviesByGenre("Action", i)
+            movies_action.results.forEach(movies => {if (data_action.length < 7) data_action.push(movies)})
         }
-        addMovieToDivImg(data)
+        addMovieToDivImg(data_horror, "categorie-1")
+        addMovieToDivImg(data_fantasy, "categorie-2")
+        addMovieToDivImg(data_action, "categorie-3")
     } catch (e) {
         console.log(e)
     }
 })
+
+caroussel("categorie-1", "switch-left-1", "switch-right-1")
+caroussel("categorie-2", "switch-left-2", "switch-right-2")
+caroussel("categorie-3", "switch-left-3", "switch-right-3")

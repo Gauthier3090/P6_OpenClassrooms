@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>JustStreamIt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="css/index.css" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -18,21 +21,26 @@
     <div id="best-movie-div">
         <h1 class="title-best-movie">Meilleur film du moment</h1>
         <h1 class="title-best-movie" id="title-movie">Avatar</h1>
-        <div id="info-best-movie">
-            <img id="img-best-movie" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="image best movie">
-            <button id="button-best-movie">Play</button>
-        </div>
+        <img id="img-best-movie" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="image best movie">
     </div>
-    <div class="categorie">
-        <h2 class="title-categorie">Horreur</h2>
-        <div class="container">
-            <a class="switch" id="switch-left">&#8678;</a>
-            <section  id="categorie-1">
-                <div class="box-img-categorie"></div>
-            </section>
-            <a class="switch" id="switch-right">&#x21e8;</a>
-        </div>
+    <h2 class="title-categorie">Horreur</h2>
+    <div class="categories">
+        <a class="switch" id="switch-left-1">&#8678;</a>
+        <section id="categorie-1"></section>
+        <a class="switch" id="switch-right-1">&#x21e8;</a>
     </div>
-    <script src="js/caroussel.js"></script>
+    <h2 class="title-categorie">Fantastique</h2>
+    <div class="categories">
+        <a class="switch" id="switch-left-2">&#8678;</a>
+        <section id="categorie-2"></section>
+        <a class="switch" id="switch-right-2">&#x21e8;</a>
+    </div>
+    <h2 class="title-categorie">Action</h2>
+    <div class="categories">
+        <a class="switch" id="switch-left-3">&#8678;</a>
+        <section id="categorie-3"></section>
+        <a class="switch" id="switch-right-3">&#x21e8;</a>
+    </div>
+    <script type="module" src="js/caroussel.js"></script>
 </body>
 </html>
