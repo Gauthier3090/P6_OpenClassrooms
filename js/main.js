@@ -62,7 +62,7 @@ async function infoModal(img) {
             }
         }
         else if (modal.item(i).id === "time-movie")
-            modal.item(i).innerHTML = info.duration +'min'
+            modal.item(i).innerHTML = info.duration +' min'
         else if (modal.item(i).id === "country-movie") {
             let countries = info.countries.toString().split(',')
             modal.item(i).innerHTML = ''
