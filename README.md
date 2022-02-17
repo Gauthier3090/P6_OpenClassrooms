@@ -5,6 +5,10 @@ Une application web permettant de visualiser en temps réel
 un classement de films intéressants.
 
 ### Lancer le serveur
+Cloner le dépôt du serveur avec cette ligne de commande:
+```
+ git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git
+```
 Pour démarrer le serveur, créer et lancer l'environnement virtuel 
 depuis le dossier server-API
 
