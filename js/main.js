@@ -29,7 +29,6 @@ function addBestMovieToDivImg(data) {
 async function infoModal(img) {
     let modal = document.getElementById("info-modal").children
     let info = await getMoviesById(img.alt)
-    console.log(info)
     for (let i = 0; i < modal.length; i++) {
         if (modal.item(i).id === "img-movie") {
             modal.item(i).src = info.image_url
@@ -78,17 +77,15 @@ async function infoModal(img) {
     }
 }
 
-function closeModal() {
-    let modal = document.getElementById("modal")
+function closeModal(modal) {
     let close = document.getElementById("close-modal")
     close.onclick = function () {
         modal.style.display = "none"
     }
 }
 
-function displayinfoimg() {
+function displayinfoimg(modal) {
     let images = document.images
-    let modal = document.getElementById("modal")
 
     for (let i = 0; i < images.length; i++) {
         images.item(i).onclick = function () {
@@ -116,6 +113,7 @@ function main(categorie, buttonleft, buttonright) {
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {
+        let modal = document.getElementById("modal")
         let data_horror = []
         let data_fantasy = []
         let data_action = []
@@ -135,8 +133,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         main("categorie-1", "switch-left-1", "switch-right-1")
         main("categorie-2", "switch-left-2", "switch-right-2")
         main("categorie-3", "switch-left-3", "switch-right-3")
-        closeModal()
-        displayinfoimg()
+        closeModal(modal)
+        displayinfoimg(modal)
     } catch (e) {
         console.log(e)
     }
